@@ -1,0 +1,177 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: constrained_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-aiplatform}
+      POSTGRES_USER: ${POSTGRES_USER:-aiuser}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-aiuser}"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    networks:
+      - ai-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: constrained_redis
+    restart: unless-stopped
+    command: redis-server --maxmemory 96mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    networks:
+      - ai-network
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: constrained_api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-aiuser}:${POSTGRES_PASSWORD:-changeme}@postgres:5432/${POSTGRES_DB:-aiplatform}
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/1
+      WORKERS: "1"
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    volumes:
+      - api_logs:/app/logs
+    ports:
+      - "${API_PORT:-8000}:8000"
+    deploy:
+      resources:
+        limits:
+          memory: 384M
+        reservations:
+          memory: 192M
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 2
+      start_period: 10s
+    networks:
+      - ai-network
+
+  worker:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    container_name: constrained_worker
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-aiuser}:${POSTGRES_PASSWORD:-changeme}@postgres:5432/${POSTGRES_DB:-aiplatform}
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_CONCURRENCY: "2"
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    volumes:
+      - worker_logs:/app/logs
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "celery -A app.celery inspect ping || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 2
+      start_period: 15s
+    networks:
+      - ai-network
+
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: constrained_prometheus
+    restart: unless-stopped
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.retention.time=7d'
+      - '--storage.tsdb.retention.size=1GB'
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:9090/-/healthy || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 2
+    networks:
+      - ai-network
+
+  node-exporter:
+    image: prom/node-exporter:v1.6.0
+    container_name: constrained_node_exporter
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+        reservations:
+          memory: 32M
+    networks:
+      - ai-network
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  api_logs:
+    driver: local
+  worker_logs:
+    driver: local
+  prometheus_data:
+    driver: local
+
+networks:
+  ai-network:
+    driver: bridge
