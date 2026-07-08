@@ -100,6 +100,13 @@ Terms: 50% upfront, 50% on delivery. Scope freeze required before start. Rush ad
 
 ---
 
+## Verified Status
+
+- `docker compose config --services` validates: `postgres`, `redis`, `api`, `worker`, `prometheus`, `node-exporter`
+- Runtime verification remains environment-dependent; `scripts/verify-install.sh` checks compose validity and Docker availability
+
+---
+
 ## License
 
 MIT — use, modify, and ship freely.  

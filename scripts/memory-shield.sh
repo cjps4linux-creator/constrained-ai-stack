@@ -1,15 +1,16 @@
-#!/usr/bin/env bash
 set -euo pipefail
 
-TOTAL_MB=$(awk '/MemTotal/ {print int($2/1024)}' /proc/mem-info)
-REQUIRED_MB=3200
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
-echo "Host RAM: ${TOTAL_MB}MB"
+cd "${PROJECT_ROOT}"
 
-if [ "$TOTAL_MB" -lt "$REQUIRED_MB" ]; then
-  echo "BLOCKED: Constrained AI Stack requires at least ${REQUIRED_MB}MB RAM."
-  echo "Detected ${TOTAL_MB}MB. Abort or override with FORCE_START=1."
+MEM_MB="$(free -m 2>/dev/null | awk '/^Mem:/ {print $7} || sysctl -n hw.memsize 2>/dev/null | awk '{print int($1/1024/1024)}')"
+MIN_MB=3200
+
+if [ "${MEM_MB}" -lt "${MIN_MB}" ]; then
+  echo "FAIL: available memory ${MEM_MB} MB is below minimum ${MIN_MB} MB"
   exit 1
 fi
 
-echo "OK: Memory check passed."
+echo "VERIFIED: available memory ${MEM_MB} MB meets minimum ${MIN_MB} MB"

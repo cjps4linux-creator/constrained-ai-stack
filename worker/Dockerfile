@@ -3,4 +3,4 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY worker/ ./worker/
-CMD ["celery", "-A", "app.celery", "worker", "--concurrency=${CELERY_CONCURRENCY:-2}"]
+CMD ["celery", "-A", "app.celery_app:celery_app", "worker", "--concurrency=${CELERY_CONCURRENCY:-2}"]
