@@ -1,71 +1,66 @@
-# Constrained AI Stack — Outreach & Checkout Copy
-# Copy into LinkedIn DM, email, or checkout page for Starter Support.
+# Constrained AI Stack — LinkedIn Outreach Script
 
----
-
-## Product: Constrained AI Stack — Starter Support
-**Price:** $97
-
-### What you get
-
-- Cloned private repo access to the full stack.
-- `docker-compose.yml` with 6 services: postgres, redis, api, worker, prometheus, node-exporter.
-- `api/` — FastAPI app with `/health`, structured config, env-driven settings.
-- `worker/` — Celery worker with `healthcheck` task and config.
-- `scripts/` — `verify-install.sh`, `memory-shield.sh`, `worker-run.sh`.
-- `docs/` — `constraints.md`, `troubleshooting.md`, `pricing.md`, `setup-checklist.md`.
-- `monitoring/` — Prometheus config.
-- MIT license.
-
-### What we review together
-
-- One-hour live setup review over screen share or async recording.
-- Config audit.
-- Runbook + findings doc.
-
-### Delivery
-
-Repo access linked within 1 hour. Review scheduled within 24 hours. 50% upfront required.
-
-### Terms
-
-- Scope freeze required before start.
-- Rush add-ons priced separately.
-
----
-
-## Sample DM Opening
+## Outreach Opening
 
 ```
-I built a constrained AI stack that runs a full FastAPI + Celery + PostgreSQL + Prometheus setup on a 3.8 GB host for under $0/month cloud spend.
+I built a constrained AI stack that runs FastAPI + Celery + PostgreSQL + Prometheus on 3.8 GB RAM for under $0/month cloud spend.
 
 If you want the repo + docs, share a private GitHub username and I’ll add access.
 
 If you’re running into setup edge cases, the Starter Support review is $97 with a fixed runbook.
 ```
 
----
+## Qualification Follow-up
 
-## Buyer Qualification Questions
+```
+Quick context to make sure I send the right thing:
 
-1. What OS and hardware are you targeting?
-2. Do you already have Docker Desktop installed?
-3. Are you evaluating for production, prototyping, or learning?
-4. Do you need hosted inference, or only the infra layer?
-5. Do you have an existing team, or is this solo?
+1. OS and hardware?
+2. Docker installed and working?
+3. Production, prototyping, or learning?
+4. Need hosted inference, or only the infra layer?
+```
 
-Use the answers to position either the free repo or the $97 Starter Support tier.
+## Close Script
 
----
+```
+Package: Constrained AI Stack — Starter Support $97
 
-## No-Go Examples
+Includes:
+ - Cloned private repo access
+ - 1-hour live setup review over screen share
+ - Config audit + runbook
 
-- Public repo release without buyer qualification path.
-- Support tier sold without a written scope or deliverable list.
-- Promising SLA or uptime for self-hosted stack.
+Payment: 50% upfront via Stripe
+Delivery: repo access within 1 hour, review scheduled within 24 hours
 
----
+Scope: fix is setup and config only; custom implementations are separate
+```
 
-**Author:** Conrad CJ Wilson
-**LinkedIn:** https://www.linkedin.com/in/conradcjwilson
-**GitHub:** https://github.com/cjps4linux-creator
+## Receipt Script
+
+```
+Payment received.
+
+I’ll share repo access within the hour and schedule the review call. Reply with your preferred time and I’ll send a calendar invite.
+```
+
+## Follow-up After Review
+
+```
+Here’s the runbook and findings from the review.
+
+Next options:
+1. You implement the changes yourself
+2. We schedule a follow-up session
+3. You move to a retainer for ongoing support
+
+Let me know which direction you want to go.
+```
+
+## No-Go Boundaries
+
+- Do not offer free setup support beyond one troubleshooting exchange
+- Do not host buyer infrastructure
+- Do not rewrite buyer code for free
+- Do not extend scope without a change order
