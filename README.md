@@ -92,13 +92,11 @@ Total target: ~1.8 GiB baseline. Headroom for batch jobs.
 
 | Product | Price | Buy |
 |---------|-------|-----|
-| Hermes Agent Template | $37 | [Buy Now](https://www.paypal.com/ncp/payment/SXA9G9LUDBW2A) |
-| Hermes Bundle | $69 | [Buy Now](https://www.paypal.com/ncp/payment/ZYQT5ZQTWD78N) |
-| Constrained AI Stack — Starter Support | $97 | Contact support |
-| Hermes Agent Template — Audit | $197 | Contact support |
-| Constrained AI Stack | Free | Self-hosted download |
+| Hermes Agent Template | $49 | [Buy Now](https://www.paypal.com/ncp/payment/ZYQT5ZQTWD78N) |
+| Hermes Bundle | $69 | [Buy Now](https://www.paypal.com/ncp/payment/SXA9G9LUDBW2A) |
+| Constrained AI Stack | $39 | [Buy Now](https://www.paypal.com/ncp/payment/FCZREAP49FXTN) |
 
-Purchase is via PayPal. After payment, forward your PayPal confirmation to support to receive your files.
+After payment, forward your PayPal confirmation to support to receive your files.
 
 ## Support
 
