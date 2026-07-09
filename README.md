@@ -88,6 +88,18 @@ Total target: ~1.8 GiB baseline. Headroom for batch jobs.
 
 ---
 
+## Purchase
+
+| Product | Price | Notes |
+|---------|-------|-------|
+| Hermes Agent Template | $37 | Digital product |
+| Hermes Agent Template — Audit | $197 | Review + written report + 30-day follow-up |
+| Constrained AI Stack | Free | Self-hosted download |
+| Constrained AI Stack — Starter Support | $97 | 1-hour setup review + config audit + runbook |
+| Hermes Bundle | $69 | Digital bundle |
+
+Purchase is via PayPal. After payment, forward your PayPal confirmation to support to receive your files.
+
 ## Support
 
 | Tier | Price | Deliverables |
@@ -100,16 +112,6 @@ Terms: 50% upfront, 50% on delivery. Scope freeze required before start. Rush ad
 
 ---
 
-After payment, you’ll receive a PayPal confirmation. Send that confirmation to support to receive your files.
-
-## Purchase
-
-| Product | Price | Buy |
-|---------|-------|-----|
-| Hermes Agent Template | $49 | [Buy Now](https://www.paypal.com/ncp/payment/SXA9G9LUDBW2A) |
-| Constrained AI Stack | $39 | [Buy Now](https://www.paypal.com/ncp/payment/FCZREAP49FXTN) |
-| Hermes Bundle | $69 | [Buy Now](https://www.paypal.com/ncp/payment/ZYQT5ZQTWD78N) |
-
 ## Verified Status
 
 - `docker compose config --services` validates: `postgres`, `redis`, `api`, `worker`, `prometheus`, `node-exporter`
@@ -119,7 +121,7 @@ After payment, you’ll receive a PayPal confirmation. Send that confirmation to
 
 ## License
 
-MIT — use, modify, and ship freely.  
-**Author:** Conrad CJ Wilson  
-**GitHub:** https://github.com/cjps4linux-creator  
+MIT — use, modify, and ship freely.
+**Author:** Conrad CJ Wilson
+**GitHub:** https://github.com/cjps4linux-creator
 **LinkedIn:** https://www.linkedin.com/in/conradcjwilson
