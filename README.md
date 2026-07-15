@@ -2,13 +2,10 @@
 
 Production AI infrastructure for low-resource environments.
 
-Run a full AI platform — APIs, workers, queues, vector search, and observability — on hardware with limited RAM and no cloud dependency.
+| **Target environment** | **Cost** | **Use case** |
+|-----------------------|----------|--------------|
+| 3–4 GiB RAM, consumer CPU, Linux | $0/month after hardware | prototyping, edge deployment, budget-constrained production, learning AI ops |
 
-|| | |
-|---|---|
-| **Target environment** | 3–4 GiB RAM, consumer CPU, Linux |
-| **Cost** | $0/month after hardware |
-| **Use case** | prototyping, edge deployment, budget-constrained production, learning AI ops |
 
 ---
 
@@ -26,13 +23,14 @@ Run a full AI platform — APIs, workers, queues, vector search, and observabili
 
 ---
 
-## Why this instead of the cloud
+## Why This Instead of the Cloud
 
 - No monthly API/GPU/infrastructure spend.
-- No vendor data-policy risk; data stays on host.
+- No vendor data-policy risk: data stays on host.
 - Constraints force simpler, auditable architecture.
-- Full offline operation; no outbound model inference required by the stack itself.
-- Portability: identical config across dev/staging/prod on the same machine.
+- Fully offline operation; no outbound model inference is required by the stack itself.
+- Portability: identical configuration across dev/staging/prod on the same machine.
+
 
 ---
 
@@ -54,7 +52,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-Verify:
+Verify the installation:
 ```bash
 curl http://localhost:8000/health
 curl http://localhost:9090/metrics
@@ -65,7 +63,7 @@ curl http://localhost:9090/metrics
 ## Resource Budgets
 
 | Service | RAM Target | Notes |
-|---------|-----------|-------|
+|---------|------------|-------|
 | postgres | 512 MiB | Shared buffers tuned for 4GB host |
 | redis | 128 MiB | Maxmemory policy set |
 | api | 384 MiB | Uvicorn workers = 1 |
@@ -73,7 +71,8 @@ curl http://localhost:9090/metrics
 | prometheus | 256 MiB | Retention = 7 days |
 | node-exporter | 64 MiB | Minimal scrape config |
 
-Total target: ~1.8 GiB baseline. Headroom for batch jobs.
+Total target: ~1.8 GiB baseline, leaving headroom for batch workloads and OS overhead.
+
 
 ---
 
@@ -98,17 +97,19 @@ Total target: ~1.8 GiB baseline. Headroom for batch jobs.
 | Constrained AI Stack — Starter Support | $97 | 1-hour setup review + config audit + runbook |
 | Hermes Bundle | $69 | Digital bundle |
 
-Purchase is via PayPal. After payment, forward your PayPal confirmation to support to receive your files.
+Purchases are handled via PayPal. After payment, forward your PayPal confirmation to support to receive your files.
+
 
 ## Support
 
 | Tier | Price | Deliverables |
-|------|-------|--------------|
+|------|-------|-------------|
 | Community | Free | Source-available, self-hosted |
 | Starter Support | $97 | One-hour setup review, config audit, runbook |
 | Consulting | Custom | Architecture review, implementation, training |
 
-Terms: 50% upfront, 50% on delivery. Scope freeze required before start. Rush add-ons priced separately.
+Terms: 50% upfront, 50% on delivery. Scope freeze is required before work begins. Rush add-ons are priced separately.
+
 
 ---
 

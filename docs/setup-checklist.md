@@ -10,7 +10,7 @@
 - [ ] `docker compose config --services` runs without errors
 - [ ] `docker compose up -d` starts all services
 - [ ] `curl http://localhost:8000/health` returns `{"status":"ok"}`
-- [ ] `curl http://localhost:9090/metrics` returns metrics output
+- [ ] `curl http://localhost:9090/metrics` returns Prometheus metrics output
 - [ ] Health checks pass in `docker compose ps`
 
 ## Verification
@@ -23,5 +23,6 @@
 - [ ] Consulting: message via LinkedIn
 
 ## Notes
+
 - If a deployment fails, do not ship customer-facing code until you can reproduce the failure in staging or a throwaway clone.
-- If the stack runs in your environment but not on a buyer environment, capture `/etc/host` and container version state before publishing.
+- If the stack runs locally but not on a buyer environment, capture `/etc/host` state and container version information before publishing.

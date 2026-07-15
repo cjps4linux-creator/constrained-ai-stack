@@ -11,4 +11,5 @@
 - Ports 8000, 5432, 6379, 9090 available
 
 ## Gaps
-- No pytest suite present in repo; product validation depends on runtime smoke tests
+
+- No pytest suite is present in the repository; product validation depends on runtime smoke tests.

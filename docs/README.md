@@ -15,4 +15,4 @@
 - Consulting: architecture, implementation, and training
 
 ## Maintenance rule
-Keep this index aligned with actual files. If a doc is added, add it here.
+> **Note:** This index is the source of truth for documentation. Add entries here when new docs are added to the repository.

@@ -28,9 +28,9 @@ PostgreSQL and Prometheus volumes will grow. Schedule backups and retention poli
 - If PostgreSQL OOMs, the stack loses state. Use WAL archiving.
 - If Prometheus retention fills disk, metrics are lost. Set retention size limits.
 
-## Assumptions
+## Requirements
 
 - Linux host with cgroups available
 - At least one IPv4 interface
-- `curl`, `wget`, and standard shell tools available on host
-- System time roughly accurate
+- `curl`, `wget`, and standard shell utilities installed on the host
+- System clock is roughly accurate

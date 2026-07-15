@@ -4,14 +4,14 @@
 
 1. Run `scripts/memory-shield.sh`
 2. Check `docker compose ps`
-3. Inspect logs: `docker compose logs <service>`
-4. If OOMKilled, lower memory limits in compose
+3. Inspect logs with `docker compose logs <service>`
+4. If the container is `OOMKilled`, lower memory limits in Compose
 
 ## PostgreSQL connection refused
 
-- Confirm health: `docker compose ps postgres`
-- Check port conflicts: `ss -ltnp | grep 5432`
-- Verify credentials in `.env` match compose expectations
+- Confirm container health with `docker compose ps postgres`
+- Check for port conflicts with `ss -ltnp | grep 5432`
+- Verify credentials in `.env` match Compose expectations
 
 ## Redis maxmemory evictions
 
