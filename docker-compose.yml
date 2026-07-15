@@ -57,7 +57,7 @@ services:
     container_name: constrained_api
     restart: unless-stopped
     environment:
-      DATABASE_URL: postgresql://${POSTGRES_USER:-aiuser}:${POSTGRES_PASSWORD:-changeme}@postgres:5432/${POSTGRES_DB:-aiplatform}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-aiuser}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@postgres:5432/${POSTGRES_DB:-aiplatform}
       REDIS_URL: redis://redis:6379/0
       CELERY_BROKER_URL: redis://redis:6379/1
       WORKERS: "1"
@@ -93,7 +93,7 @@ services:
     container_name: constrained_worker
     restart: unless-stopped
     environment:
-      DATABASE_URL: postgresql://${POSTGRES_USER:-aiuser}:${POSTGRES_PASSWORD:-changeme}@postgres:5432/${POSTGRES_DB:-aiplatform}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-aiuser}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@postgres:5432/${POSTGRES_DB:-aiplatform}
       REDIS_URL: redis://redis:6379/0
       CELERY_BROKER_URL: redis://redis:6379/1
       CELERY_CONCURRENCY: "2"
