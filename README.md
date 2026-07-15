@@ -5,7 +5,7 @@ Production AI infrastructure for low-resource environments.
 Run a full AI platform — APIs, workers, queues, vector search, and observability — on hardware with limited RAM and no cloud dependency.
 
 | **Target environment** | **Cost** | **Use case** |
-|---|---|---|
+| --- | --- | --- |
 | 3–4 GiB RAM, consumer CPU, Linux | $0/month after hardware | prototyping, edge deployment, budget-constrained production, learning AI ops |
 
 ---
@@ -64,7 +64,7 @@ curl http://localhost:9090/metrics
 ## Resource Budgets
 
 | Service | RAM Target | Notes |
-|---|---|---|
+| --- | --- | --- |
 | postgres | 512 MiB | Shared buffers tuned for 4GB host |
 | redis | 128 MiB | Maxmemory policy set |
 | api | 384 MiB | Uvicorn workers = 1 |
@@ -87,29 +87,9 @@ Total target: ~1.8 GiB baseline, leaving headroom for batch workloads and OS ove
 
 ---
 
-## Purchase
+## Licensing & Support
 
-| Product | Price | Notes |
-|---|---|---|
-| Hermes Agent Template | $37 | Digital product |
-| Hermes Agent Template — Audit | $197 | Review + written report + 30-day follow-up |
-| Constrained AI Stack | Free | Self-hosted download |
-| Constrained AI Stack — Starter Support | $97 | 1-hour setup review + config audit + runbook |
-| Hermes Bundle | $69 | Digital bundle |
-
-Purchases are handled via PayPal. After payment, forward your PayPal confirmation to support to receive your files.
-
----
-
-## Support
-
-| Tier | Price | Deliverables |
-|---|---|---|
-| Community | Free | Source-available, self-hosted |
-| Starter Support | $97 | One-hour setup review, config audit, runbook |
-| Consulting | Custom | Architecture review, implementation, training |
-
-Terms: 50% upfront, 50% on delivery. Scope freeze is required before work begins. Rush add-ons are priced separately.
+Source is MIT-licensed and free to self-host. For commercial support, consulting, or purchase bundles, contact **conradcjwilson0@gmail.com**.
 
 ---
 
@@ -122,7 +102,7 @@ Terms: 50% upfront, 50% on delivery. Scope freeze is required before work begins
 
 ## License
 
-MIT — use, modify, and ship freely.  
-**Author:** Conrad CJ Wilson  
-**GitHub:** https://github.com/cjps4linux-creator  
+MIT — use, modify, and ship freely.
+**Author:** Conrad CJ Wilson
+**GitHub:** https://github.com/cjps4linux-creator
 **LinkedIn:** https://www.linkedin.com/in/conradcjwilson
