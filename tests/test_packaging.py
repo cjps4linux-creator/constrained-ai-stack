@@ -1,7 +1,6 @@
 """Constrained AI Stack packaging and compose sanity tests."""
 from pathlib import Path
 import subprocess
-import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
