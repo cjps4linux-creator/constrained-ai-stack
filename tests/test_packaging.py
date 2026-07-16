@@ -2,6 +2,8 @@
 from pathlib import Path
 import subprocess
 
+import pytest
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -20,6 +22,12 @@ def test_docker_compose_services_declared():
 
 
 def test_compose_config_validation(tmp_path):
+    import os
+    import shutil
+    if shutil.which("docker") is None:
+        pytest.skip("docker not available in this environment")
+    if not os.environ.get("POSTGRES_PASSWORD"):
+        pytest.skip("POSTGRES_PASSWORD not set; compose interpolation requires it")
     result = subprocess.run(
         ["docker", "compose", "config", "--services"],
         cwd=REPO_ROOT,
