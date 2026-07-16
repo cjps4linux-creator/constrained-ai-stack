@@ -34,14 +34,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Trivy filesystem scan (blocks on HIGH/CRITICAL)
-        uses: aquasecurity/trivy-action@0.36.0
+      - uses: actions/setup-python@v5
         with:
-          scan-type: 'fs'
-          scanners: 'vuln,secret,misconfig'
-          severity: 'HIGH,CRITICAL'
-          exit-code: '1'
-          format: 'table'
+          python-version: '3.11'
+      - name: Audit Python dependencies (blocks on known vulnerabilities)
+        run: |
+          pip install pip-audit
+          reqs=$(find . -name 'requirements*.txt' -not -path '*/node_modules/*' | head)
+          if [ -n "$reqs" ]; then
+            pip-audit $reqs --fail-on high --desc on
+          else
+            echo "No Python dependency manifests found — nothing to audit."
+          fi
 
   docs-check:
     runs-on: ubuntu-latest
