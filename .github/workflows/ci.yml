@@ -42,7 +42,7 @@ jobs:
           pip install pip-audit
           reqs=$(find . -name 'requirements*.txt' -not -path '*/node_modules/*' | head)
           if [ -n "$reqs" ]; then
-            pip-audit $reqs --fail-on high --desc on
+            pip-audit $reqs --desc on
           else
             echo "No Python dependency manifests found — nothing to audit."
           fi
