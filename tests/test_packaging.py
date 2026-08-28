@@ -33,6 +33,7 @@ def test_compose_config_validation(tmp_path):
         cwd=REPO_ROOT,
         capture_output=True,
         text=True,
+        check=True,
     )
     if result.returncode != 0:
         raise AssertionError(f"docker compose config failed: {result.stderr}")
