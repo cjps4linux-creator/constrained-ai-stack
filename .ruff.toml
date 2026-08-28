@@ -1,2 +1,2 @@
 [lint.isort]
-required = false
+known-first-party = ["api", "worker"]
