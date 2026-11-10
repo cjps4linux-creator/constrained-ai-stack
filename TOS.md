@@ -1,4 +1,4 @@
-# Constrained AI Stack — Terms of Use
+# Constrained AI Stack  -  Terms of Use
 
 ## Purchase terms
 - 50% upfront, 50% on delivery unless otherwise agreed in writing.

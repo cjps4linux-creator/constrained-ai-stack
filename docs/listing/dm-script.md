@@ -1,13 +1,13 @@
-# Constrained AI Stack — LinkedIn Outreach Script
+# Constrained AI Stack  -  LinkedIn Outreach Script
 
 ## Outreach Opening
 
 ```
 I built a constrained AI stack that runs FastAPI + Celery + PostgreSQL + Prometheus on 3.8 GB RAM for under $0/month cloud spend.
 
-If you want the repo + docs, share a private GitHub username and I’ll add access.
+If you want the repo + docs, share a private GitHub username and I'll add access.
 
-If you’re running into setup edge cases, the Starter Support review is $97 with a fixed runbook.
+If you're running into setup edge cases, the Starter Support review is $97 with a fixed runbook.
 ```
 
 ## Qualification Follow-up
@@ -24,7 +24,7 @@ Quick context to make sure I send the right thing:
 ## Close Script
 
 ```
-Package: Constrained AI Stack — Starter Support $97
+Package: Constrained AI Stack  -  Starter Support $97
 
 Includes:
  - Cloned private repo access
@@ -42,13 +42,13 @@ Scope: fix is setup and config only; custom implementations are separate
 ```
 Payment received.
 
-I’ll share repo access within the hour and schedule the review call. Reply with your preferred time and I’ll send a calendar invite.
+I'll share repo access within the hour and schedule the review call. Reply with your preferred time and I'll send a calendar invite.
 ```
 
 ## Follow-up After Review
 
 ```
-Here’s the runbook and findings from the review.
+Here's the runbook and findings from the review.
 
 Next options:
 1. You implement the changes yourself

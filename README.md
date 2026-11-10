@@ -1,6 +1,6 @@
 # Constrained AI Stack
 
-Production AI infrastructure for low-resource environments — run a full AI platform on hardware with limited RAM and no cloud dependency.
+Production AI infrastructure for low-resource environments  -  run a full AI platform on hardware with limited RAM and no cloud dependency.
 
 Built by Conrad CJ Wilson.
 
@@ -89,12 +89,12 @@ Total target: ~1.8 GiB baseline, leaving headroom for batch workloads and OS ove
 
 ## What Is Included
 
-- `docker-compose.yml` — all services with health checks and memory limits
-- `.env.example` — configuration template
-- `monitoring/prometheus.yml` — scrape configurations
-- `scripts/memory-shield.sh` — pre-flight RAM validation
-- `docs/constraints.md` — design decisions and failure modes
-- `docs/troubleshooting.md` — common issues on constrained hosts
+- `docker-compose.yml`  -  all services with health checks and memory limits
+- `.env.example`  -  configuration template
+- `monitoring/prometheus.yml`  -  scrape configurations
+- `scripts/memory-shield.sh`  -  pre-flight RAM validation
+- `docs/constraints.md`  -  design decisions and failure modes
+- `docs/troubleshooting.md`  -  common issues on constrained hosts
 
 ## Architecture Decision Records
 
@@ -140,7 +140,7 @@ Production-ready infrastructure prototype. All services are defined with health 
 
 ## License
 
-MIT — use, modify, and ship freely.
+MIT  -  use, modify, and ship freely.
 
 **Author:** Conrad CJ Wilson
 **GitHub:** https://github.com/cjps4linux-creator

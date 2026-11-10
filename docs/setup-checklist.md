@@ -1,4 +1,4 @@
-# Constrained AI Stack — Setup Checklist
+# Constrained AI Stack  -  Setup Checklist
 
 ## Before you run
 

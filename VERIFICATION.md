@@ -1,4 +1,4 @@
-# Constrained AI Stack — Verification Record
+# Constrained AI Stack  -  Verification Record
 
 **Date:** 2026-08-27
 **Verifier:** Conrad CJ Wilson
@@ -10,7 +10,7 @@
 
 | Check | Result | Evidence |
 |---|---|---|
-| README present and non-empty | PASS | Comprehensive README with resource budgets, architecture, ADRs, honest limitations |
+| README present and [lorem]-empty | PASS | Comprehensive README with resource budgets, architecture, ADRs, honest limitations |
 | LICENSE present | PASS | MIT license in repo root |
 | SECURITY.md present | PASS | Security policy with vulnerability reporting path |
 | LAUNCH.md present | PASS | Launch readiness snapshot |

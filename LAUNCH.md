@@ -1,4 +1,4 @@
-# Constrained AI Stack — Launch Readiness
+# Constrained AI Stack  -  Launch Readiness
 
 **Date:** 2026-08-27
 **Owner:** Conrad CJ Wilson
@@ -15,7 +15,7 @@
 | Tests passing | Pending | No automated test suite; verification via `docker compose config` |
 | Security scan | Pending | SECURITY.md in place |
 | README complete | Complete | Architecture, resource budgets, ADRs, honest limitations |
-| LICENSE | Complete | MIT — Conrad CJ Wilson |
+| LICENSE | Complete | MIT  -  Conrad CJ Wilson |
 | Docker build | Complete | Docker Compose validated with `docker compose config` |
 | Documentation | Complete | Constraints doc, troubleshooting guide, monitoring config |
 
@@ -51,4 +51,4 @@
 
 ## Contact
 
-Conrad CJ Wilson — conradcjwilson0@gmail.com
+Conrad CJ Wilson  -  conradcjwilson0@gmail.com
