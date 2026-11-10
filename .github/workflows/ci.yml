@@ -44,7 +44,7 @@ jobs:
           if [ -n "$reqs" ]; then
             for f in $reqs; do pip-audit -r "$f" --desc on; done
           else
-            echo "No Python dependency manifests found — nothing to audit."
+            echo "No Python dependency manifests found  -  nothing to audit."
           fi
 
   docs-check:

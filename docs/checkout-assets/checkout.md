@@ -16,7 +16,7 @@ Digital files delivered within 1 hour of purchase. No hardware shipped.
 
 ## hermes-agent-template audit bundle
 
-Product: Hermes Agent Template — Audit Bundle
+Product: Hermes Agent Template  -  Audit Bundle
 Price: $197
 
 What you get:
@@ -44,7 +44,7 @@ Repo access linked within 1 hour. No paid support included.
 
 ## constrained-ai-stack starter support
 
-Product: Constrained AI Stack — Starter Support
+Product: Constrained AI Stack  -  Starter Support
 Price: $97
 
 What you get:
@@ -57,5 +57,5 @@ Repo access linked within 1 hour. Review scheduled within 24 hours. 50% upfront 
 
 # Usage Notes
 # - Keep these assets private until explicit approval.
-# - Match buyer expectations: no false promises, no “ guaranteed results ” claims.
+# - Match buyer expectations: no false promises, no " guaranteed results " claims.
 # - If pricing changes, update checkout copy and listing in one change.

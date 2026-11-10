@@ -1,6 +1,6 @@
 # Design Constraints
 
-This stack is engineered for constrained Linux hosts, typically 3–4 GiB RAM.
+This stack is engineered for constrained Linux hosts, typically 3-4 GiB RAM.
 
 These constraints are not bugs. They are design inputs.
 

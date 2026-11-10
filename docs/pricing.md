@@ -4,10 +4,10 @@
 
 ## Pricing
 
-- **Community:** Free — source-available, self-hosted
-- **Starter Support:** $97 — one-hour setup review, config audit, runbook
-- **Consulting Engagement:** custom — architecture review, implementations, training
+- **Community:** Free  -  source-available, self-hosted
+- **Starter Support:** $97  -  one-hour setup review, config audit, runbook
+- **Consulting Engagement:** custom  -  architecture review, implementations, training
 
 ## License
 
-MIT — use, modify, and ship freely.
+MIT  -  use, modify, and ship freely.
